@@ -1,5 +1,5 @@
 {
-      "name": "Emiko Robot",
+      "name": "End Group Bot",
       "description": "A Powerful Telegram group management bot with anime theme.",
       "keywords": [
          "telegram",
@@ -9,8 +9,8 @@
          "emikorobot"
       ],
     
-   "logo":    "https://telegra.ph/file/35e56ba7eace7332356ad.jpg",  
-   "repository": "https://github.com/kennedy-ex/https://github.com/kennedy-ex/EmikoRobot",
+   "logo":    "https://te.legra.ph/file/345715f7a17d1eadf5307.jpg",  
+   "repository": "https://github.com/timeisnotwaiting/EndRobot",
    "addons": [
           {
          "options": {
@@ -46,7 +46,7 @@
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,
-         "value": "2088106582"
+         "value": "1985209910"
      },
       "STRING_SESSION": {
          "description": "Fill with telethon string session.",
@@ -63,12 +63,12 @@
       },
       "OWNER_USERNAME": {
          "description": "Your username without the @",
-         "value": "excrybaby"
+         "value": "Asynchorous"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
          "required": true,
-         "value": "emikosupport"
+         "value": "THE_END_NETWORK"
       },
       "MONGO_DB_URI": {
          "description": "Required for database connections.",
@@ -103,7 +103,7 @@
       "DEV_USERS": {
          "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Masha support then keep the current ID's here at they are and add yours.",
          "required": false,
-         "value": ""
+         "value": "1985209910"
      },
       "ERROR_LOG": {
          "description": "ID of log for show error.",
