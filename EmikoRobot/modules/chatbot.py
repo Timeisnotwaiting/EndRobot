@@ -54,7 +54,7 @@ async def hmm(_, message):
     status = message.text.split(None, 1)[1]
     chat_id = message.chat.id
     if status == "ON" or status == "on" or status == "On":
-        lel = await edit_or_reply(message, "`Processing...`")
+        lel = await edit_or_reply(message, "Processing...")
         lol = add_chat(int(message.chat.id))
         if not lol:
             await lel.edit("Killua AI Already Activated In This Chat")
