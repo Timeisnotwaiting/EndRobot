@@ -6,7 +6,7 @@ from telegram import __version__ as telever
 from telethon import __version__ as tlhver
 from pyrogram import __version__ as pyrover
 from EmikoRobot.events import register
-from EmikoRobot import telethn as tbot, BOT_USERNAME AS bu
+from EmikoRobot import telethn as tbot, BOT_USERNAME as bu
 
 
 PHOTO = "https://te.legra.ph/file/345715f7a17d1eadf5307.jpg"
