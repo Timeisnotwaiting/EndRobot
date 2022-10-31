@@ -6,7 +6,7 @@ from telegram import __version__ as telever
 from telethon import __version__ as tlhver
 from pyrogram import __version__ as pyrover
 from EmikoRobot.events import register
-from EmikoRobot import telethn as tbot
+from EmikoRobot import telethn as tbot, BOTUSERNAME AS bu
 
 
 PHOTO = "https://te.legra.ph/file/345715f7a17d1eadf5307.jpg"
@@ -19,5 +19,5 @@ async def awake(event):
   TEXT += f"⚪ **Library Version :** `{telever}` \n\n"
   TEXT += f"⚪ **Telethon Version :** `{tlhver}` \n\n"
   TEXT += f"⚪ **Pyrogram Version :** `{pyrover}` \n\n"
-  BUTTON = [[Button.url("Help", "https://t.me/KILLUA_GROUP_BOT?start=help"), Button.url("Support", "https://t.me/THE_END_NETWORK")]]
+  BUTTON = [[Button.url("Help", f"https://t.me/{bu}?start=help"), Button.url("Support", "https://t.me/THE_END_NETWORK")]]
   await tbot.send_file(event.chat_id, PHOTO, caption=TEXT,  buttons=BUTTON)
