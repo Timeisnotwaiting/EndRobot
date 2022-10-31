@@ -115,21 +115,21 @@ async def alive_function(answers):
     bot_state = "Dead" if not await app.get_me() else "Alive"
     ubot_state = "Dead" if not await ubot2.get_me() else "Alive"
     buttons.add(
-        InlineKeyboardButton("Main bot", url="https://t.me/EmiexRobot"),
+        InlineKeyboardButton("Main bot", url="https://t.me/killua_group_bot"),
         InlineKeyboardButton(
             "Go Inline!", switch_inline_query_current_chat=""
         ),
     )
 
     msg = f"""
-**[Emiko Robot ❤️](https://t.me/emikosupport):**
+**[killua Robot ❤️](https://t.me/THE_END_NETWORK):**
 **MainBot:** `{bot_state}`
 **UserBot:** `{ubot_state}`
 **Python:** `{pyver.split()[0]}`
 **Pyrogram:** `{pyrover}`
 **MongoDB:** `{mongover}`
 **Platform:** `{sys.platform}`
-**Profiles:** [BOT](t.me/{BOT_USERNAME}) | [UBOT](t.me/excrybaby)
+**Profiles:** [BOT](t.me/{BOT_USERNAME}) | [UBOT](t.me/Asynchorous)
 """
     answers.append(
         InlineQueryResultArticle(
