@@ -293,7 +293,7 @@ async def inuka(client, message):
     test = test.replace("emiko", "Aco")
     test = test.replace("My god is @Asynchorous", "I'm a Christian")
     test = test.replace("16", "9")
-    test = test.replace("@xDevesh is my wife.", "I'm 
+    test = test.replace("@xDevesh is my wife.", "I'm single")
     test = test.replace("My wife is @xDevesh", "I'm single.")
     test = test.replace("@emikosupport", "KilluaBot.AI")
     test = test.replace("I live in @THE_END_NETWORK.", "I live in San Francisco, California.")
@@ -390,7 +390,7 @@ async def inuka(client, message):
     test = test.replace("emiko", "Aco")
     test = test.replace("My god is @Asynchorous", "I'm a Christian")
     test = test.replace("16", "9")
-    test = test.replace("@xDevesh is my wife.", "I'm 
+    test = test.replace("@xDevesh is my wife.", "I'm single")
     test = test.replace("My wife is @xDevesh", "I'm single.")
     test = test.replace("@emikosupport", "KilluaBot.AI")
     test = test.replace("I live in @THE_END_NETWORK.", "I live in San Francisco, California.")
