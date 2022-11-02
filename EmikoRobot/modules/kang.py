@@ -141,7 +141,25 @@ def kang(update: Update, context: CallbackContext):
 
         if not is_animated:
             if is_video:
-                
+                limit = 50
+                pack = 1
+                packname = str(user.id) + "_video_" + context.bot.username + str(pack)
+                x = context.bot.get_sticker_set(packname)
+                if x:
+                    if len(x.stickers) >= limit:
+                        pack += 1
+                    try:
+                        context.bot.add_sticker_to_set(user_id=user.id, name=packname, webm_sticker=open("vidsticker.webm", rb), emoji=sticker_emoji)
+                        return msg.reply_text(f"Sticker successfully added to [pack](t.me/addstickers/{packname})"+ f"\nEmoji is: {sticker_emoji}", parse_mode=ParseMode.MARKDOWN)
+                    except Exception as e:
+                        msg.reply_text(e)
+                else:
+                    try:
+                        context.bot.add_sticker_to_set(user_id=user.id, name=packname, webm_sticker=open("vidsticker.webm", rb), emoji=sticker_emoji)
+                        return msg.reply_text(f"Sticker successfully added to [pack](t.me/addstickers/{packname})"+ f"\nEmoji is: {sticker_emoji}", parse_mode=ParseMode.MARKDOWN)
+                    except Exception as e:
+                        msg.reply_text(e)
+                    
             try:
                 im = Image.open(kangsticker)
                 maxsize = (512, 512)
