@@ -11,7 +11,7 @@ async def wish(_, m):
 
 For example:
 /wish I could date you 😍, or
-/wish that sushi was 🍣 in..."""
+/wish that sushi was 🍣 in...""")
 
     x = []
     for i in range(0, 101):
