@@ -5,7 +5,6 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from EmikoRobot import arq
-from EmikoRobot.utils.errors import capture_err
 from EmikoRobot import pbot as app
 
 
@@ -34,7 +33,6 @@ def isArgInt(message: Message) -> bool:
 
 
 @app.on_message(filters.command("q"))
-@capture_err
 async def quotly_func(client, message: Message):
     if not message.reply_to_message:
         return await message.reply_text("Reply to a message to quote it.")
