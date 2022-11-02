@@ -4,8 +4,9 @@ from pyrogram import filters
 
 @pbot.on_message(filters.command("wish"))
 async def wish(_, m):
-    txt = m.text.split(None, 1)[1]
-    if not txt:
+    try:
+        txt = m.text.split(None, 1)[1]
+    except:
         return await m.reply("""You can use /wish as a general Wishing Well of sorts
 
 For example:
