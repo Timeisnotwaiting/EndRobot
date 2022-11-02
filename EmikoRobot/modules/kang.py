@@ -152,13 +152,13 @@ def kang(update: Update, context: CallbackContext):
                         context.bot.add_sticker_to_set(user_id=user.id, name=packname, webm_sticker=open("vidsticker.webm", rb), emoji=sticker_emoji)
                         return msg.reply_text(f"Sticker successfully added to [pack](t.me/addstickers/{packname})"+ f"\nEmoji is: {sticker_emoji}", parse_mode=ParseMode.MARKDOWN)
                     except Exception as e:
-                        msg.reply_text(e)
+                        return msg.reply_text(e)
                 else:
                     try:
                         context.bot.add_sticker_to_set(user_id=user.id, name=packname, webm_sticker=open("vidsticker.webm", rb), emoji=sticker_emoji)
                         return msg.reply_text(f"Sticker successfully added to [pack](t.me/addstickers/{packname})"+ f"\nEmoji is: {sticker_emoji}", parse_mode=ParseMode.MARKDOWN)
                     except Exception as e:
-                        msg.reply_text(e)
+                        return msg.reply_text(e)
                     
             try:
                 im = Image.open(kangsticker)
