@@ -210,18 +210,19 @@ def kang(update, context):
             max_stickers = 50
             while packname_found == 0:
                 try:
-                    stickerset = context.bot.get_sticker_set(packname)
-                    if len(stickerset.stickers) >= max_stickers:
-                        packnum += 1
-                        packname = (
-                            "animated"
-                            + str(packnum)
-                            + "_"
-                            + str(user.id)
-                            + "_by_"
-                            + context.bot.username
-                        )
-                    else:
+                    try:
+                        stickerset = context.bot.get_sticker_set(packname)
+                        if len(stickerset.stickers) >= max_stickers:
+                            packnum += 1
+                            packname = (
+                                "animated"
+                                + str(packnum)
+                                + "_"
+                                + str(user.id)
+                                + "_by_"
+                                + context.bot.username
+                            )
+                    except:
                         packname_found = 1
                 except TelegramError as e:
                     if e.message == "Stickerset_invalid":
