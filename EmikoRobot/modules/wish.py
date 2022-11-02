@@ -1,5 +1,6 @@
 from EmikoRobot import pbot
 import random
+from pyrogram import filters
 
 @pbot.on_message(filters.command("wish"))
 async def wish(_, m):
