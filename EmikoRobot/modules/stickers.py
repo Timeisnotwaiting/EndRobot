@@ -591,14 +591,14 @@ __help__ = """
 """
 
 
-"""STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid, run_async=True)
+STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid, run_async=True)
 GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker, run_async=True)
-KANG_HANDLER = DisableAbleCommandHandler("kang", kang, pass_args=True, run_async=True)"""
+KANG_HANDLER = DisableAbleCommandHandler("kang", kang, pass_args=True, run_async=True)
 DEL_HANDLER = DisableAbleCommandHandler("delsticker", delsticker, run_async=True)
-#STICKERS_HANDLER = DisableAbleCommandHandler("stickers", cb_sticker, run_async=True)
+STICKERS_HANDLER = DisableAbleCommandHandler("stickers", cb_sticker, run_async=True)
 
-dispatcher.add_handler(STICKERS_HANDLER)
+"""dispatcher.add_handler(STICKERS_HANDLER)
 dispatcher.add_handler(STICKERID_HANDLER)
 dispatcher.add_handler(GETSTICKER_HANDLER)
-dispatcher.add_handler(KANG_HANDLER)
+dispatcher.add_handler(KANG_HANDLER)"""
 dispatcher.add_handler(DEL_HANDLER)
