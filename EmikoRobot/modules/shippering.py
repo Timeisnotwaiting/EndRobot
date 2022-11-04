@@ -35,8 +35,8 @@ async def sec(_, m):
     is_selected = await get_couple(chat_id, today)
     if not is_selected:
         try:
-            c1_id = int(m.text.split()[0])
-            c2_id = int(m.text.split()[1])
+            c1_id = int(m.text.split()[1])
+            c2_id = int(m.text.split()[2])
         except:
             return await m.reply("GIVE IDS TO SHIP !")
         c1_mention = (await _.get_users(c1_id)).mention
