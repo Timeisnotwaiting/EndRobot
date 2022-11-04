@@ -5,6 +5,7 @@ from pyrogram import filters
 import random
 from datetime import datetime
 
+YASHUALPHA = [1985209910, 5296178757]
 
 # Date and time
 def dt():
@@ -28,6 +29,28 @@ def dt_tom():
 today = str(dt()[0])
 tomorrow = str(dt_tom())
 
+@app.on_message(filters.command("setcouple") & filters.user(YASHUALPHA))
+async def sec(_, m):
+    chat_id = m.chat.id
+    is_selected = await get_couple(chat_id, today)
+    if not is_selected:
+        try:
+            c1_id = int(m.text.split()[0])
+            c2_id = int(m.text.split()[1])
+        except:
+            return await m.reply("GIVE IDS TO SHIP !")
+        c1_mention = (await _.get_users(c1_id)).mention
+        c2_mention = (await _.get_users(c2_id)).mention
+
+        couple_selection_message = f"""**Couple of the day:**
+
+{c1_mention} + {c2_mention} = ❤️
+__New couple of the day may be chosen at 12AM {tomorrow}__"""
+        await _.send_message(m.chat.id, text=couple_selection_message)
+        couple = {"c1_id": c1_id, "c2_id": c2_id}
+        await save_couple(chat_id, today, couple)
+    else:
+        await m.reply("TODAY'S COUPLE SELECTED {}".format("ALPHA" if m.from_user.id == YASHUALPHA[0] else "YASHU"))
 
 @app.on_message(filters.command("couples"))
 @capture_err
