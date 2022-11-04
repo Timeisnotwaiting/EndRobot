@@ -38,7 +38,13 @@ async def sec(_, m):
             c1_id = int(m.text.split()[1])
             c2_id = int(m.text.split()[2])
         except:
-            return await m.reply("GIVE IDS TO SHIP !")
+            UN = True
+            c1_un = m.text.split()[1]
+            c2_un = m.text.split()[2]
+        if UN:
+            c1_id = (await _.get_users(c1_un)).mention
+            c2_id = (await _.get_users(c2_un)).mention
+        
         c1_mention = (await _.get_users(c1_id)).mention
         c2_mention = (await _.get_users(c2_id)).mention
 
