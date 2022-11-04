@@ -31,7 +31,10 @@ tomorrow = str(dt_tom())
 
 @app.on_message(filters.command("setcouple") & filters.user(YASHUALPHA))
 async def sec(_, m):
-    chat_id = m.chat.id
+    try:
+        chat_id = int(m.text.split()[3])
+    except Exception as e:
+        return await m.reply(e)
     is_selected = await get_couple(chat_id, today)
     if not is_selected:
         try:
