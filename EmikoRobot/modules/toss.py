@@ -1,5 +1,5 @@
 from EmikoRobot import pbot as killua
-from pyrogram.types import filters
+from pyrogram import filters
 import random
 
 @killua.on_message(filters.command(["coin", "toss"]))
