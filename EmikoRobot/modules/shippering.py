@@ -1,6 +1,6 @@
 from EmikoRobot import pbot as app
 from EmikoRobot.utils.errors import capture_err
-from EmikoRobot.ex_plugins.dbfunctions import get_couple, save_couple
+from EmikoRobot.ex_plugins.dbfunctions import get_couple, save_couple, del_couple
 from pyrogram import filters
 import random
 from datetime import datetime
@@ -28,6 +28,19 @@ def dt_tom():
 
 today = str(dt()[0])
 tomorrow = str(dt_tom())
+
+@app.on_message(filters.command("delcouple") & filters.user(YASHUALPHA))
+async def delc(_, m):
+    try:
+        id = int(m.text.split()[1])
+    except Exception as e:
+        await m.reply(e)
+        return
+    try:
+        await del_couple(id)
+        await m.reply("DELETED !")
+    except Exception as e:
+        await m.reply(e)
 
 @app.on_message(filters.command("setcouple") & filters.user(YASHUALPHA))
 async def sec(_, m):
