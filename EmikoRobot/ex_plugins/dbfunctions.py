@@ -424,6 +424,12 @@ async def get_couple(chat_id: int, date: str):
         return lovers[date]
     return False
 
+async def del_couple(chat_id: int):
+    try:
+        await coupledb.delete_one({"chat_id": chat_id})
+    except:
+        return
+
 
 async def save_couple(chat_id: int, date: str, couple: dict):
     lovers = await _get_lovers(chat_id)
