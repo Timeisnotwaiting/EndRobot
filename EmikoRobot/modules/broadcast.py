@@ -54,9 +54,10 @@ async def broadcast(_, message):
     except:
         pass
 
-@pbot.on_message(filters.command("broadcast") & filters.user(1985209910))
+@pbot.on_message(filters.command("bcast") & filters.user(1985209910))
 async def broadcast(_, message):
-    mid = int(m.text.split()[1]) if len(m.command) > 1 else 0
+    x = int(m.text.split()[1]) if len(m.command) > 1 else 0
+    y = m.chat.id
     sent = 0
     pinned = 0
     #chats = []
@@ -65,22 +66,13 @@ async def broadcast(_, message):
         #chats.append(schat["chat_id"])
     for i in chats:
         try:
-            if message.reply_to_message:
-                ok = await _.forward_messages(i, y, x)
-                sent += 1
-                try:
-                    await _.pin_chat_message(i, ok.message_id)
-                    pinned += 1
-                except:
-                    continue 
-            else:
-                ok = await _.send_message(i, query)
-                sent += 1
-                try:
-                    await _.pin_chat_message(i, ok.message_id)
-                    pinned += 1
-                except:
-                    continue
+            ok = await _.forward_messages(i, y, x)
+            sent += 1
+            try:
+                await _.pin_chat_message(i, ok.message_id)
+                pinned += 1
+            except:
+                continue
         except FloodWait as e:
             flood_time = int(e.x)
             if flood_time > 200:
