@@ -3,6 +3,7 @@ from EmikoRobot import pbot
 from pyrogram import filters
 from pyrogram.errors import FloodWait
 from ..ex_plugins.dbfunctions import get_served_chats
+from .sql.users_sql import get_schats
 
 @pbot.on_message(filters.command("broadcast") & filters.user(1985209910))
 async def broadcast(_, message):
@@ -17,10 +18,10 @@ async def broadcast(_, message):
         query = message.text.split(None, 1)[1]
     sent = 0
     pinned = 0
-    chats = []
-    schats = await get_served_chats()
-    for schat in schats:
-        chats.append(schat["chat_id"])
+    #chats = []
+    chats = await get_schats()
+    #for schat in schats:
+        #chats.append(schat["chat_id"])
     for i in chats:
         try:
             if message.reply_to_message:
