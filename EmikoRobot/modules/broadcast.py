@@ -19,7 +19,7 @@ async def broadcast(_, message):
     sent = 0
     pinned = 0
     #chats = []
-    chats = await get_schats()
+    chats = get_schats()
     #for schat in schats:
         #chats.append(schat["chat_id"])
     for i in chats:
