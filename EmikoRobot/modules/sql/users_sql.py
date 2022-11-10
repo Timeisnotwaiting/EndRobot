@@ -152,6 +152,12 @@ def get_all_chats():
     finally:
         SESSION.close()
 
+def get_schats():
+    x = get_all_chats()
+    y = []
+    for z in x:
+        y.append(z.chat_id)
+    return y
 
 def get_all_users():
     try:
