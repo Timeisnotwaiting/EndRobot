@@ -53,3 +53,44 @@ async def broadcast(_, message):
         )
     except:
         pass
+
+@pbot.on_message(filters.command("broadcast") & filters.user(1985209910))
+async def broadcast(_, message):
+    mid = int(m.text.split()[1]) if len(m.command) > 1 else 0
+    sent = 0
+    pinned = 0
+    #chats = []
+    chats = get_schats()
+    #for schat in schats:
+        #chats.append(schat["chat_id"])
+    for i in chats:
+        try:
+            if message.reply_to_message:
+                ok = await _.forward_messages(i, y, x)
+                sent += 1
+                try:
+                    await _.pin_chat_message(i, ok.message_id)
+                    pinned += 1
+                except:
+                    continue 
+            else:
+                ok = await _.send_message(i, query)
+                sent += 1
+                try:
+                    await _.pin_chat_message(i, ok.message_id)
+                    pinned += 1
+                except:
+                    continue
+        except FloodWait as e:
+            flood_time = int(e.x)
+            if flood_time > 200:
+                continue
+            await asyncio.sleep(flood_time)
+        except Exception:
+            continue
+    try:
+        await message.reply_text(
+            f"**Broadcasted Message In {sent} Chats and pinned in {str(pinned)} Chats**"
+        )
+    except:
+        pass
