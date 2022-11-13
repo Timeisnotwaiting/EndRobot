@@ -1,7 +1,10 @@
 from EmikoRobot import pbot
 from pyrogram import filters
 
-ALPHABETS = "abcdefghijklmnopqrstuvwxyz"
+ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+ALPHABETS = []
+for u in ALPHABET:
+    ALPHABETS.append(u)
 
 SERIF = "𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙"
 
