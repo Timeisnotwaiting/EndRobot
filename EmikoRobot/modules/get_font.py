@@ -17,9 +17,12 @@ async def gf(_, m):
     s = m.text.split()
     x = []
     for y in s:
-        for a in y:
-            if a.lower() in ALPHABETS:
-                x.append(y)
+        ch = 0
+        if ch == 0:
+            pass
+            ch += 1
+        else:
+            x.append(y)
     txt = ""
     for b in x:
         for c in b:
