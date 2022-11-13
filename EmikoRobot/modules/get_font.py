@@ -18,4 +18,14 @@ async def gf(_, m):
             if a.lower() in ALPHABETS:
                 x.append(y)
     txt = ""
-    
+    for b in x:
+        for c in b:
+        cnt = 0
+        ind = ALPHABETS.index(c)
+        if cnt == 0:
+            txt += SERIF[ind]
+            cnt += 1
+        else:
+            txt += ALLCAPS[ind]
+            cnt += 1
+    return await m.reply(txt)
