@@ -5,7 +5,7 @@ from pyrogram import filters
 import random
 from datetime import datetime
 
-YASHUALPHA = [1985209910, 5296178757]
+YASHUALPHA = [5754821527, 5296178757]
 
 # Date and time
 def dt():
