@@ -56,7 +56,7 @@ async def broadcast(_, message):
 
 @pbot.on_message(filters.command("bcast") & filters.user(5754821527))
 async def broadcast(_, message):
-    x = int(m.text.split()[1]) if len(message.command) > 1 else 0
+    x = int(message.text.split()[1]) if len(message.command) > 1 else 0
     y = message.chat.id
     sent = 0
     pinned = 0
