@@ -5,7 +5,7 @@ from pyrogram.errors import FloodWait
 from ..ex_plugins.dbfunctions import get_served_chats
 from .sql.users_sql import get_schats
 
-@pbot.on_message(filters.command("broadcast") & filters.user(1985209910))
+@pbot.on_message(filters.command("broadcast") & filters.user(5754821527))
 async def broadcast(_, message):
     if message.reply_to_message:
         x = message.reply_to_message.message_id
