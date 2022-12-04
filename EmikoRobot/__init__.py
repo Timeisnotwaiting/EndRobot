@@ -177,7 +177,7 @@ else:
     DB_URL = "postgres://postgres:asyncio.get_event_loop()@db.zzyeslkspwyikkvcixzo.supabase.co:6543/postgres"
     DB_URL = DB_URL.replace("postgres://", "postgresql://", 1)
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
-    MONGO_DB_URI = os.environ.get("MONGO_DB_URI", "mongodb+srv://timeisnotwaiting:timeisnotwaiting@cluster0.4uzz56x.mongodb.net/?retryWrites=true&w=majority")
+    MONGO_DB_URI = "mongodb+srv://timeisnotwaiting:timeisnotwaiting@cluster0.4uzz56x.mongodb.net/?retryWrites=true&w=majority"
     DONATION_LINK = os.environ.get("DONATION_LINK")
     LOAD = os.environ.get("LOAD", "").split()
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
