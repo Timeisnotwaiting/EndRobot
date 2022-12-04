@@ -132,82 +132,85 @@ if ENV:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 else:
-    from EmikoRobot.config import Development as Config
-
-    TOKEN = Config.TOKEN
+    TOKEN = os.environ.get("TOKEN", "5626094210:AAHv4bKET0Ff_ToKpLx0UVkQ1jA_f13SiPI")
 
     try:
-        OWNER_ID = int(Config.OWNER_ID)
+        OWNER_ID = int(os.environ.get("OWNER_ID", 5868832590))
     except ValueError:
-        raise Exception("Your OWNER_ID variable is not a valid integer.")
+        raise Exception("Your OWNER_ID env variable is not a valid integer.")
 
-    JOIN_LOGGER = Config.JOIN_LOGGER
-    OWNER_USERNAME = Config.OWNER_USERNAME
-    ALLOW_CHATS = Config.ALLOW_CHATS
+    JOIN_LOGGER = os.environ.get("JOIN_LOGGER", -862532511)
+    OWNER_USERNAME = os.environ.get("OWNER_USERNAME", Keshava_Tripathi)
+
     try:
-        DRAGONS = {int(x) for x in Config.DRAGONS or []}
-        DEV_USERS = {int(x) for x in Config.DEV_USERS or []}
+        DRAGONS = {int(x) for x in os.environ.get("DRAGONS", "5868832590").split()}
+        DEV_USERS = {int(x) for x in os.environ.get("DEV_USERS", "5868832590").split()}
     except ValueError:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
     try:
-        DEMONS = {int(x) for x in Config.DEMONS or []}
+        DEMONS = {int(x) for x in os.environ.get("DEMONS", "5868832590").split()}
     except ValueError:
         raise Exception("Your support users list does not contain valid integers.")
 
     try:
-        WOLVES = {int(x) for x in Config.WOLVES or []}
-    except ValueError:
+        WOLVES = {int(x) for x in os.environ.get("WOLVES", "5868832590").split()}
+    except ValueError: 
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
     try:
-        TIGERS = {int(x) for x in Config.TIGERS or []}
+        TIGERS = {int(x) for x in os.environ.get("TIGERS", "5868832590").split()}
     except ValueError:
         raise Exception("Your tiger users list does not contain valid integers.")
 
-    EVENT_LOGS = Config.EVENT_LOGS
-    WEBHOOK = Config.WEBHOOK
-    URL = Config.URL
-    PORT = Config.PORT
-    CERT_PATH = Config.CERT_PATH
-    API_ID = Config.API_ID
-    API_HASH = Config.API_HASH
-    MONGO_PORT = Config.MONGO_PORT
-    DB_URL = Config.SQLALCHEMY_DATABASE_URI
-    MONGO_DB_URI = Config.MONGO_DB_URI
-    ARQ_API_KEY = Config.ARQ_API_KEY
-    ARQ_API_URL = Config.ARQ_API_URL
-    DONATION_LINK = Config.DONATION_LINK
-    LOAD = Config.LOAD
-    TEMP_DOWNLOAD_DIRECTORY = Config.TEMP_DOWNLOAD_DIRECTORY
-    OPENWEATHERMAP_ID = Config.OPENWEATHERMAP_ID
-    NO_LOAD = Config.NO_LOAD
-    ERROR_LOG = Config.ERROR_LOG
-    HEROKU_API_KEY = Config.HEROKU_API_KEY
-    HEROKU_APP_NAME = Config.HEROKU_APP_NAME
-    DEL_CMDS = Config.DEL_CMDS
-    STRICT_GBAN = Config.STRICT_GBAN
-    WORKERS = Config.WORKERS
-    REM_BG_API_KEY = Config.REM_BG_API_KEY
-    BAN_STICKER = Config.BAN_STICKER
-    ALLOW_EXCL = Config.ALLOW_EXCL
-    CASH_API_KEY = Config.CASH_API_KEY
-    TIME_API_KEY = Config.TIME_API_KEY
-    WALL_API = Config.WALL_API
-    SUPPORT_CHAT = Config.SUPPORT_CHAT
-    SPAMWATCH_SUPPORT_CHAT = Config.SPAMWATCH_SUPPORT_CHAT
-    SPAMWATCH_API = Config.SPAMWATCH_API
-    SESSION_STRING = Config.SESSION_STRING
-    INFOPIC = Config.INFOPIC
-    STRING_SESSION = Config.STRING_SESSION
-    LASTFM_API_KEY = Config.LASTFM_API_KEY
-    CF_API_KEY = Config.CF_API_KEY
-    MONGO_DB = Config.MONGO_DB
+    INFOPIC = bool(os.environ.get("INFOPIC", True))
+    EVENT_LOGS = os.environ.get("EVENT_LOGS", None)
+    WEBHOOK = bool(os.environ.get("WEBHOOK", False))
+    URL = os.environ.get("URL", "")  # Does not contain token
+    PORT = int(os.environ.get("PORT", 5000))
+    CERT_PATH = os.environ.get("CERT_PATH")
+    API_ID = os.environ.get("API_ID", 10763476)
+    ERROR_LOG = os.environ.get("ERROR_LOG", -862532511)
+    API_HASH = os.environ.get("API_HASH", "e7d6d5493a896264a09d04fda7a30f9d")
+    SESSION_STRING = os.environ.get("SESSION_STRING", None)
+    STRING_SESSION = os.environ.get("STRING_SESSION", "1AZWarzYBu8DY80tZ88PCqd9LSr3_0rHx3r2ZqIxD4QLxPMHfj48AwCC4Wu0Njdhhdw0Vof4BCSNh2OmwhZDkARpzXnucpurPu0DIgBQA5MGfMZvE8B0jBLgSRp_BKltL8LXpQt0FIDFGx280o6CygRrOKUFjNSTNGJ7chBZERo9TPbSn0TwACSGINKlX-1ZkZ694gBdFhCCjOOwoBj2VHofAdyWI78TcwAPQkrZKWhBBDrhc9HCFyqjLVHyjKcoeR0Wv0nLO_LEbtpvf6vGhJMMziKiVKSdgJCQrkhx3y85F2xF0H2v_Fo-5-mdRaUa_nABuphz_2cwmEszHIg3QfPlJroLQPsM=")
+    DB_URL = "postgres://postgres:asyncio.get_event_loop()@db.zzyeslkspwyikkvcixzo.supabase.co:6543/postgres"
+    DB_URL = DB_URL.replace("postgres://", "postgresql://", 1)
+    REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
+    MONGO_DB_URI = os.environ.get("MONGO_DB_URI", "mongodb+srv://timeisnotwaiting:timeisnotwaiting@cluster0.4uzz56x.mongodb.net/?retryWrites=true&w=majority")
+    DONATION_LINK = os.environ.get("DONATION_LINK")
+    LOAD = os.environ.get("LOAD", "").split()
+    HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
+    HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
+    TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
+    OPENWEATHERMAP_ID = os.environ.get("OPENWEATHERMAP_ID", None)
+    VIRUS_API_KEY = os.environ.get("VIRUS_API_KEY", None)
+    NO_LOAD = os.environ.get("NO_LOAD", "translation").split()
+    DEL_CMDS = bool(os.environ.get("DEL_CMDS", False))
+    STRICT_GBAN = bool(os.environ.get("STRICT_GBAN", False))
+    WORKERS = int(os.environ.get("WORKERS", 8))
+    BAN_STICKER = os.environ.get("BAN_STICKER", "CAADAgADOwADPPEcAXkko5EB3YGYAg")
+    ALLOW_EXCL = os.environ.get("ALLOW_EXCL", True)
+    CASH_API_KEY = os.environ.get("CASH_API_KEY", None)
+    TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
+    WALL_API = os.environ.get("WALL_API", None)
+    SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
+    SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
+    SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
+    LASTFM_API_KEY = os.environ.get("LASTFM_API_KEY", None)
+    CF_API_KEY = os.environ.get("CF_API_KEY", None)
+    WELCOME_DELAY_KICK_SEC = os.environ.get("WELCOME_DELAY_KICL_SEC", None)
+    ARQ_API_URL = os.environ.get("ARQ_API_URL", "https://arq.hamker.in")
+    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", "BCYKVF-KYQWFM-JCMORU-RZWOFQ-ARQ")
+    MONGO_PORT = os.environ.get("MONGO_PORT")
+    MONGO_DB = os.environ.get("MONGO_DB", "Emiko")
+    ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
 
     try:
-        BL_CHATS = {int(x) for x in Config.BL_CHATS or []}
+        BL_CHATS = {int(x) for x in os.environ.get("BL_CHATS", "").split()}
     except ValueError:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
+
 
 # If you forking dont remove this id, just add your id. LOL...
 
