@@ -3,7 +3,7 @@ from Python_ARQ import ARQ
 from pyrogram import filters, Client as app, enums
 from pyrogram.types import Message
 from aiohttp import ClientSession 
-from Spoiled.Database.chatbot import check_chatbot, add_chatbot, rm_chatbot
+from EmikoRobot.ex_plugins.dbfunctions import check_chatbot, add_chatbot, rm_chatbot
 from pyrogram.types import InlineKeyboardButton as IKB, InlineKeyboardMarkup as IKM
 
 ARQ_API_KEY = "PNZJLN-ZZFHVK-USQLIZ-MQEWJN-ARQ"
