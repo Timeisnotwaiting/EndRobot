@@ -18,6 +18,29 @@ from EmikoRobot.modules.disable import DisableAbleCommandHandler
 
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
 
+def single_button_maker(text, url):
+    markup = InlineKeyboardMarkup(
+             [
+             [
+             InlineKeyboardButton(text, url=url)
+             ]
+             ]
+             )
+    return markup
+
+def triple_button_maker(x, y, z):
+    markup = InlineKeyboardMarkup(
+             [
+             [
+             InlineKeyboardButton(x[0], url=x[1]),
+             InlineKeyboardButton(y[0], url=y[1])
+             ],
+             [
+             InlineKeyboardButton(z[0], url=z[1])
+             ]
+             ]
+             )
+    return markup
 
 def stickerid(update: Update, context: CallbackContext):
     msg = update.effective_message
@@ -115,7 +138,7 @@ def kang(u: Update, c: CallbackContext):
             return m.reply_text("Start me in pm !", reply_markup=single_button_maker("Start !", f"https://t.me/{c.bot.username}"))
         if "occupied" in str(e):
             return m.reply_text("Pack name already occupied, go to @stickers and delete pack name with this bot username !")
-        m.reply_text("An unknown error occurred, consider support !", reply_markup=support_markup)
+        m.reply_text("An unknown error occurred, consider support !")
         print(e)
 
 
