@@ -132,7 +132,7 @@ if ENV:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 else:
-    TOKEN = os.environ.get("TOKEN", "5626094210:AAHv4bKET0Ff_ToKpLx0UVkQ1jA_f13SiPI")
+    TOKEN = os.environ.get("TOKEN", "5878056492:AAGCL9aAQPIqmDhkLWZf3bOYt8UdmS8qe7Q")
 
     try:
         OWNER_ID = int(os.environ.get("OWNER_ID", 5868832590))
@@ -140,7 +140,7 @@ else:
         raise Exception("Your OWNER_ID env variable is not a valid integer.")
 
     JOIN_LOGGER = os.environ.get("JOIN_LOGGER", -862532511)
-    OWNER_USERNAME = os.environ.get("OWNER_USERNAME", "Keshava_Tripathi")
+    OWNER_USERNAME = os.environ.get("OWNER_USERNAME", "ShutUpKeshav")
 
     try:
         DRAGONS = {int(x) for x in os.environ.get("DRAGONS", "5868832590").split()}
@@ -173,7 +173,7 @@ else:
     ERROR_LOG = os.environ.get("ERROR_LOG", -862532511)
     API_HASH = os.environ.get("API_HASH", "e7d6d5493a896264a09d04fda7a30f9d")
     SESSION_STRING = os.environ.get("SESSION_STRING", None)
-    STRING_SESSION = os.environ.get("STRING_SESSION", "1AZWarzYBu8DY80tZ88PCqd9LSr3_0rHx3r2ZqIxD4QLxPMHfj48AwCC4Wu0Njdhhdw0Vof4BCSNh2OmwhZDkARpzXnucpurPu0DIgBQA5MGfMZvE8B0jBLgSRp_BKltL8LXpQt0FIDFGx280o6CygRrOKUFjNSTNGJ7chBZERo9TPbSn0TwACSGINKlX-1ZkZ694gBdFhCCjOOwoBj2VHofAdyWI78TcwAPQkrZKWhBBDrhc9HCFyqjLVHyjKcoeR0Wv0nLO_LEbtpvf6vGhJMMziKiVKSdgJCQrkhx3y85F2xF0H2v_Fo-5-mdRaUa_nABuphz_2cwmEszHIg3QfPlJroLQPsM=")
+    STRING_SESSION = os.environ.get("STRING_SESSION", "1BVtsOJUBu4m4eLObCeJuxGPfNPGebdkGBNaMyeoiw-jGP7bXJ8mlZ5Fefk46pLVkx_EbGMmr1hxrszZHhJCsOzFQWG1dnVcLL1gVnNLt3jA_7yHdi9kz7VbhDXAUduKPtV-c8Nz0xSAbKWCtQXGafK-KHhxt6QBSTM-rMEHoqsYw9OfAp32boQzNAz32X0nOo8X-3sCxsH3JY1E9XO_f_6tofMbJp2vCnHF3CDLnSsiEZSMz2XTKZhbY5saIk4QemByZ95QXhMupP3GWnkpEL6QOnakvUTrpQ6xq-Cs83iLiH5-2wdInT93zsYDVbFdx7exO7wCk5FBv55179EX97B2Az47u0uI=")
     DB_URL = "postgres://postgres:asyncio.get_event_loop()@db.zzyeslkspwyikkvcixzo.supabase.co:6543/postgres"
     DB_URL = DB_URL.replace("postgres://", "postgresql://", 1)
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
